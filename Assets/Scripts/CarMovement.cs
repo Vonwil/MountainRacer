@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class CarMovement : MonoBehaviour {
+public class CarMovement : MonoBehaviour
+{
 
     public float movementSpeed = 20.0f;
     public float declerationRate = 10.0f;
@@ -14,6 +15,12 @@ public class CarMovement : MonoBehaviour {
     public WheelCollider frontRight;
     public WheelCollider backLeft;
     public WheelCollider backRight;
+
+
+    //Wheel Collision detection
+    private WheelHit whBackLeft;
+    private WheelHit whBackRight;
+
 
     // Use this for initialization
     void Start ()
@@ -31,6 +38,17 @@ public class CarMovement : MonoBehaviour {
             SceneManager.LoadScene("GameLevel");
             acceleration.value = 0;
             movementSpeed = 0;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        backLeft.GetGroundHit(out whBackLeft);
+        backRight.GetGroundHit(out whBackRight);
+
+        if (whBackLeft.collider.gameObject.tag == "Grass")
+        {
+            Debug.Log("Grass");
         }
     }
 
