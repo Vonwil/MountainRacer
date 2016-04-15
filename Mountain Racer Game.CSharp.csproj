@@ -65,9 +65,15 @@
   <ItemGroup>
     <Compile Include="Assets\Cartoon_Race_Car_03\Scripts\Logo.cs" />
     <Compile Include="Assets\Cartoon_Race_Car_03\Scripts\OrbitCamera.cs" />
+    <Compile Include="Assets\Scenes\Main Menu.cs" />
     <Compile Include="Assets\Scripts\CarMovement.cs" />
     <Compile Include="Assets\Scripts\MenuOptions.cs" />
     <Compile Include="Assets\Scripts\Tags.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\DL Assets\A_piece_of_nature\Readme.txt" />
+    <None Include="Assets\DL Assets\Roads\FileNamesDescription.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
