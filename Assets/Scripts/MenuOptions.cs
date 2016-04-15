@@ -1,12 +1,24 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class MenuOptions : MonoBehaviour
 {
-	// Update is called once per frame
-	void Update ()
+    void Update()
     {
-        
+    }
+
+	public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void GameLevel()
+    {
+        SceneManager.LoadScene("GameLevel");
+    }
+
+    public void ToStartMenu()
+    {
+        SceneManager.LoadScene("StartLevel");
     }
 }

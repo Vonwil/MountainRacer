@@ -65,7 +65,6 @@
   <ItemGroup>
     <Compile Include="Assets\Cartoon_Race_Car_03\Scripts\Logo.cs" />
     <Compile Include="Assets\Cartoon_Race_Car_03\Scripts\OrbitCamera.cs" />
-    <Compile Include="Assets\Scenes\Main Menu.cs" />
     <Compile Include="Assets\Scripts\CarMovement.cs" />
     <Compile Include="Assets\Scripts\MenuOptions.cs" />
     <Compile Include="Assets\Scripts\Tags.cs" />
