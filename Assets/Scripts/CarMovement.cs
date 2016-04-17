@@ -75,8 +75,8 @@ public class CarMovement : MonoBehaviour {
 
 		if (backLeft.isGrounded && backRight.isGrounded) 
 		{
-			// grass terrain
-			if (wheelR.collider.gameObject.tag == "Grass") 
+			//Grass terrain
+			if (wheelL.collider.gameObject.tag == "Grass" && acceleration.value >= 2) 
 			{
                 backLeftWheelFriction.stiffness = grassStiffness;
                 backRightWheelFriction.stiffness = grassStiffness;
@@ -84,34 +84,8 @@ public class CarMovement : MonoBehaviour {
                 frontRightWheelFriction.stiffness = grassStiffness;
             }
 
-			/*if (wheelR.collider.gameObject.tag == "Grass") 
-			{
-				WheelFrictionCurve fwdF;
-				fwdF = backRight.forwardFriction;
-				fwdF.stiffness = 0.5f;
-				backRight.forwardFriction = fwdF;
-			}
-            */
-
-			//asphalt terrain
-			if (wheelL.collider.gameObject.tag == "Asphalt") 
-			{
-                backLeftWheelFriction.stiffness = asphaltStiffness;
-                backRightWheelFriction.stiffness = asphaltStiffness;
-                frontLeftWheelFriction.stiffness = asphaltStiffness;
-                frontRightWheelFriction.stiffness = asphaltStiffness;
-            }
-
-			//if (wheelR.collider.gameObject.tag == "Asphalt") 
-			//{
-				//WheelFrictionCurve fwdF;
-				//fwdF = backRight.forwardFriction;
-				//fwdF.stiffness = 0.8f;
-				//backRight.forwardFriction = fwdF;
-			//}
-
-			//dirt terrain
-			if (wheelL.collider.gameObject.tag == "Dirt") 
+			//Dirt terrain
+			if (wheelL.collider.gameObject.tag == "Dirt" && acceleration.value >= 4) 
 			{
                 backLeftWheelFriction.stiffness = dirtStiffness;
                 backRightWheelFriction.stiffness = dirtStiffness;
@@ -119,16 +93,8 @@ public class CarMovement : MonoBehaviour {
                 frontRightWheelFriction.stiffness = dirtStiffness;
             }
 
-			//if (wheelR.collider.gameObject.tag == "Dirt") 
-			//{
-				//WheelFrictionCurve fwdF;
-				//fwdF = backRight.forwardFriction;
-				//fwdF.stiffness = 0.6f;
-				//backRight.forwardFriction = fwdF;
-			//}
-
-			//gravel terrain
-			if (wheelL.collider.gameObject.tag == "Gravel") 
+			//Gravel terrain
+			if (wheelL.collider.gameObject.tag == "Gravel" && acceleration.value >= 6) 
 			{
                 backLeftWheelFriction.stiffness = gravelStiffness;
                 backRightWheelFriction.stiffness = gravelStiffness;
@@ -136,12 +102,20 @@ public class CarMovement : MonoBehaviour {
                 frontRightWheelFriction.stiffness = gravelStiffness;
             }
 
-			//if (wheelR.collider.gameObject.tag == "Gravel") 
-			//{
-				//fwdF.stiffness = 0.4f;
-				//backRight.forwardFriction = fwdF;
-			//}
-		}
+            //Asphalt terrain
+            if (wheelL.collider.gameObject.tag == "Asphalt" && acceleration.value >= 8)
+            {
+                backLeftWheelFriction.stiffness = asphaltStiffness;
+                backRightWheelFriction.stiffness = asphaltStiffness;
+                frontLeftWheelFriction.stiffness = asphaltStiffness;
+                frontRightWheelFriction.stiffness = asphaltStiffness;
+            }
+
+            frontRight.forwardFriction = backRightWheelFriction;
+            frontLeft.forwardFriction = backLeftWheelFriction;
+            backLeft.forwardFriction = backLeftWheelFriction;
+            backRight.forwardFriction = backRightWheelFriction;
+        }
     }
 
     void Movement ()
