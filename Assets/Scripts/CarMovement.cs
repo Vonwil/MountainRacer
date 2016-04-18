@@ -10,6 +10,8 @@ public class CarMovement : MonoBehaviour {
 	public Rigidbody rigbod;
     private float declerationRate;
 
+    UIManager ui;
+
     //Wheel Colliders
     public WheelCollider frontLeft;
     public WheelCollider frontRight;
@@ -47,6 +49,8 @@ public class CarMovement : MonoBehaviour {
         backRightWheelFriction = backRight.forwardFriction;
         frontLeftWheelFriction = frontLeft.forwardFriction;
         frontRightWheelFriction = frontRight.forwardFriction;
+
+        ui = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -73,7 +77,15 @@ public class CarMovement : MonoBehaviour {
         backLeft.GetGroundHit(out wheelL);
         backRight.GetGroundHit(out wheelR);
 
-		if (backLeft.isGrounded && backRight.isGrounded) 
+        // end line detection
+        if (wheelL.collider.gameObject.tag == "Finish")
+        {
+            //movementSpeed = 0.0f;
+            //acceleration.value = 0.0f;
+            ui.timerCheck = false;
+        }
+
+        if (backLeft.isGrounded && backRight.isGrounded) 
 		{
 			//Grass terrain
 			if (wheelL.collider.gameObject.tag == "Grass" && acceleration.value >= 2) 
