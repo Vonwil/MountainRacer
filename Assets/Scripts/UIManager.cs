@@ -8,13 +8,16 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenu;
     public Text time;
     public Text timeBig;
+    public Text timeCheck1;
     public float timer = 0.0f;
     public float pTimer = 0.0f;
+    public float checkTimer = 0.0f;
     public bool timerCheck = true;
+    public bool checkPointCheck = false;
     CarMovement car;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         car = GameObject.FindGameObjectWithTag("Player").GetComponent<CarMovement>();
     }
@@ -27,7 +30,15 @@ public class UIManager : MonoBehaviour
             timer += Time.deltaTime;
             pTimer += Time.deltaTime;
             time.text = "Time = " + timer.ToString("F1");
+            PlayerPrefs.SetFloat("timer1", checkTimer);
         }
+
+        if (checkPointCheck == true)
+        {
+            timeCheck1.text = "Check Point 1 = " + PlayerPrefs.GetFloat("timer1");
+        }
+
+        //the pause menu button
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = !isPaused;

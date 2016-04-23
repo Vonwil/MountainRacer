@@ -85,6 +85,12 @@ public class CarMovement : MonoBehaviour {
             ui.timerCheck = false;
         }
 
+        //check point 
+        if (wheelL.collider.gameObject.tag == "Check")
+        {
+            ui.checkPointCheck = true;
+        }
+
         if (backLeft.isGrounded && backRight.isGrounded) 
 		{
 			//Grass terrain
