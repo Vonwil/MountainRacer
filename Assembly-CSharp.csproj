@@ -47,13 +47,16 @@
   <ItemGroup>
      <Compile Include="Assets\Cartoon_Race_Car_03\Scripts\Logo.cs" />
      <Compile Include="Assets\Cartoon_Race_Car_03\Scripts\OrbitCamera.cs" />
+     <Compile Include="Assets\DL Assets\LazyFog\Scripts\exampleSceneScript.cs" />
      <Compile Include="Assets\Scripts\BaseCarMovement.cs" />
      <Compile Include="Assets\Scripts\CarMovement.cs" />
      <Compile Include="Assets\Scripts\MenuOptions.cs" />
      <Compile Include="Assets\Scripts\Tags.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <None Include="Assets\DL Assets\A_piece_of_nature\Readme.txt" />
+     <None Include="Assets\DL Assets\LazyFog\Shaders\LazyFog.shader" />
      <None Include="Assets\DL Assets\Roads\FileNamesDescription.txt" />
+     <None Include="Assets\DL Assets\LazyFog\Instructions.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

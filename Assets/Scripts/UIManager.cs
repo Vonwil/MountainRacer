@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
         {
             timer += Time.deltaTime;
             pTimer += Time.deltaTime;
-            time.text = "Time = " + timer.ToString("F1");
+            time.text = "Time: " + timer.ToString();
             PlayerPrefs.SetFloat("timer1", checkTimer);
         }
 
